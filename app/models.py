@@ -18,11 +18,13 @@ class User(models.Model):
     lastName = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    permissions = models.IntegerField(default=0)
+    access = models.IntegerField(default=0)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
     objects = UserManager()
     def __str__(self):
+        return f'{self.firstName} {self.lastName}'
+    def fullName(self):
         return f'{self.firstName} {self.lastName}'
 
 class Profile(models.Model):
@@ -37,3 +39,22 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         User.objects.create(user=instance)
         post_save.connect(create_user_profile, sender=User)
+
+class Types(models.Model):
+    pkg = models.CharField(max_length=255)
+
+class ProjectStatus(models.Model):
+    status = models.CharField(max_length=255)
+
+class BillStatus(models.Model):
+    status = models.CharField(max_length=255)
+
+class Freq(models.Model):
+    payFreq = models.CharField(max_length=255)
+
+class Package(models.Model):
+    name = models.CharField(max_length=255)
+    price = models.CharField(max_length=255)
+    time = models.CharField(max_length=255)
+    info = models.TextField()
+    pkg = models.ForeignKey(Types, related_name='pkgType', on_delete=CASCADE)

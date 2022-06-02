@@ -1,17 +1,14 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.contrib import messages
 from ..models import *
 import bcrypt
 
-def  logReg(request):
-    if 'user_id' not in request.session:
-        return render(request, 'logReg.html')
-    else:
-        user = User.objects.get(id=request.session['user_id'])
-        context = {
-            'user': user,
-        }
-        return redirect('/')
+def index(request):
+    data = {
+        'Backend API': 'Running'
+    }
+    return JsonResponse(data)
 
 def logout(request):
     request.session.clear()
