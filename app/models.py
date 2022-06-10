@@ -2,6 +2,8 @@ from django.db import models
 # from .misc import *
 from django.db.models.signals import post_save
 from django.db.models.deletion import CASCADE
+from django.shortcuts import reverse
+from django_countries.fields import CountryField
 
 class UserManager(models.Manager):
     def validate(self, form):
@@ -18,7 +20,7 @@ class User(models.Model):
     lastName = models.CharField(max_length=255)
     username = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    access = models.IntegerField(default=0)
+    level = models.IntegerField(default=0)
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
     objects = UserManager()
@@ -40,21 +42,56 @@ def create_user_profile(sender, instance, created, **kwargs):
         User.objects.create(user=instance)
         post_save.connect(create_user_profile, sender=User)
 
-class Types(models.Model):
-    pkg = models.CharField(max_length=255)
-
-class ProjectStatus(models.Model):
-    status = models.CharField(max_length=255)
-
-class BillStatus(models.Model):
-    status = models.CharField(max_length=255)
-
-class Freq(models.Model):
-    payFreq = models.CharField(max_length=255)
-
-class Package(models.Model):
+class Company(models.Model):
     name = models.CharField(max_length=255)
-    price = models.CharField(max_length=255)
-    time = models.CharField(max_length=255)
-    info = models.TextField()
-    pkg = models.ForeignKey(Types, related_name='pkgType', on_delete=CASCADE)
+    logo = models.ImageField(upload_to='companyLogos', default='bee.png')
+    user = models.ForeignKey(User, related_name='companyUser', on_delete=CASCADE)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    def fullCompany(self):
+        return f'{self.user.firstName} from {self.name}'
+    def __str__(self):
+        return self.name
+
+class Position(models.Model):
+    role = models.CharField(max_length=255)
+    user = models.ForeignKey(User, related_name='positionUser', on_delete=CASCADE)
+    company = models.ForeignKey(Company, related_name='positionCompany', on_delete=CASCADE)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    def companyRoll(self):
+        return f'{self.user.firstName}, {self.role} from {self.company.name}'
+    def __str__(self):
+        return self.role
+
+class StatusType(models.Model):
+    statusType = models.CharField(max_length=255)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.statusType
+
+class Status(models.Model):
+    status = models.CharField(max_length=255)
+    typeStatus = models.ForeignKey(StatusType, related_name='theType' , on_delete=CASCADE)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.status
+
+CATEGORY = {
+    ('ADD', 'Add On'),
+    ('ONE', 'One Time'),
+    ('REC', 'Recurring')
+}
+
+class Service(models.Model):
+    name = model.CharField(max_length=255)
+    price = models.FloatField()
+    category = models.CharField(choices=CATEGORY, max_length=3)
+    description = models.TextField()
+    turnaround = models.TextField()
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.name

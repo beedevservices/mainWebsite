@@ -5,10 +5,7 @@ from ..models import *
 import bcrypt
 
 def index(request):
-    data = {
-        'Backend API': 'Running'
-    }
-    return JsonResponse(data)
+    return render(request, 'index.html')
 
 def logout(request):
     request.session.clear()
