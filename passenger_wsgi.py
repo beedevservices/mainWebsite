@@ -1,0 +1,1 @@
+from beeDevServices.wsgi import application
