@@ -7,6 +7,9 @@ import bcrypt
 def index(request):
     return render(request, 'index.html')
 
+def about(request):
+    return render(request, 'about.html')
+
 def logout(request):
     request.session.clear()
     messages.error(request, 'You have been logged out')

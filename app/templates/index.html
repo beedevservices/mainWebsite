@@ -8,70 +8,10 @@
     <link rel="stylesheet" href="{% static 'css/styles.css'%}">
     <link rel="shortcut icon" href="https://images.craftsnherbs.com/bee/IMG_0992.jpg" type="image/x-icon">
     <title>BeeDev Services</title>
-    <style type="text/css">
-        #overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        filter:alpha(opacity=70);
-        -moz-opacity:0.7;
-        -khtml-opacity: 0.7;
-        opacity: 0.7;
-        z-index: 100;
-        display: none;
-        }
-        .cnt223 a{
-        text-decoration: none;
-        }
-        .popup{
-        width: 100%;
-        margin: 0 auto;
-        display: none;
-        position: fixed;
-        z-index: 101;
-        }
-        .cnt223{
-        min-width: 600px;
-        width: 600px;
-        min-height: 150px;
-        margin: 100px auto;
-        background: #f3f3f3;
-        position: relative;
-        z-index: 103;
-        padding: 15px 35px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px #000;
-        }
-        .cnt223 p{
-        clear: both;
-            color: #555555;
-            /* text-align: justify; */
-            font-size: 20px;
-            font-family: sans-serif;
-        }
-        .cnt223 p a{
-        color: #d91900;
-        font-weight: bold;
-        }
-        .cnt223 .x{
-        float: right;
-        height: 35px;
-        left: 22px;
-        position: relative;
-        top: -25px;
-        width: 34px;
-        }
-        .cnt223 .x:hover{
-        cursor: pointer;
-        }
-        </style>
 </head>
 <body>
     <header>
-        {% block mainHeader %} {% include 'mainHeader.html' %} {% endblock mainHeader %}
+        {% block mainHeader %} {% include 'base/mainHeader.html' %} {% endblock mainHeader %}
     </header>
     <div class="messages">
         {% if messages %}
@@ -80,20 +20,17 @@
             {% endfor %}
         {% endif %}
     </div>
+    {% block popup %}
+        {% include 'base/popup.html'   %}
+    {% endblock popup %}
     <main>
-        <div class='popup'>
-            <div class='cnt223'>
-                <h1>Important Notice</h1>
-                <p>Website is going through redesign at this time<br/>A temporary version is up at the following <a href="https://beedev-services.vercel.app/" target="_blank">link</a><br/>We should be back up and running in a week<br/><br/><a href='' class='close'>Close</a></p>
-            </div>
-        </div>
         <h1>Trust our Hive with your website needs while keeping in touch with who you are</h1>
         <p>
             In nature a Bee Hive is created by the work of a colony of bees.  Thats how BeeDev Services works.  We want to work WITH YOU.  We take that hive mentality personally.  We may have the skills and the time to create websites, but you have ideas and know your business.  Together we can create, build, and update your website.
         </p>
     </main>
     <footer>
-        {% block footer %} {% include 'footer.html'  %} {% endblock footer %}
+        {% block footer %} {% include 'base/footer.html'  %} {% endblock footer %}
     </footer>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
     <script src='{% static "js/scripts.js"%}'></script>

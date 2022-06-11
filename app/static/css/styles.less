@@ -1,24 +1,5 @@
-.flexrow {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.flexcolumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-@bg01: #374671;
-@bg02: #37467125;
-@border: #B59E4B;
-@border01: 4px groove @border;
+@import './less/base.less';
+@import 'popup.less';
 
 body {
     .flexcolumn();
@@ -58,6 +39,27 @@ body {
         p {
             width: 75%;
         }
+        .row {
+            .flexrow();
+            width: 95%;
+
+            #profile {
+                max-width: 200px;
+                border-radius: 50%;
+                margin: .5em 1em;
+            }
+            .column {
+                .flexcolumn();
+
+                p {
+                    text-align: center;
+
+                    a {
+                        color: @bg01;
+                    }
+                }
+            }
+        }
     }
     footer {
         .flexcolumn();
@@ -88,3 +90,5 @@ body {
         }
     }
 }
+
+@import './less/media.less';

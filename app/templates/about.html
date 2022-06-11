@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="shortcut icon" href="https://images.craftsnherbs.com/bee/IMG_0992.jpg" type="image/x-icon">
+    <title>BeeDev Services</title>
+</head>
+<body>
+    <header>
+        {% block mainHeader %} {% include 'base/mainHeader.html' %} {% endblock mainHeader %}
+    </header>
+    <div class="messages">
+        {% if messages %}
+            {% for m in messages %}
+                <h5>{{m}}</h5>
+            {% endfor %}
+        {% endif %}
+    </div>
+    {% block popup %}
+    {% include 'base/popup.html'   %}
+{% endblock popup %}
+    <main>
+        <h1>About BeeDev Services</h1>
+        <p>Created out of a love of coding and the desire to help where ever and whoever.</p>
+        <p>Our focus is on helping businesses and start-ups get the tools they need to do what they do best.  It can be a customer facing website or even an employee based one.  Our job here is to help those businesses do what they do best while we do what we do best.</p>
+        <div class="row">
+            <img src="https://images.craftsnherbs.com/new-melissa.jpg" alt="Melissa" id="profile">
+            <div class="column">
+                <h3>Melissa Longenberger</h3>
+                <h4>Owner</h4>
+                <p>Web Developer</p>
+                <p><a href="https://melissa-longenberger.com" target="_blank">Portfolio</a></p>
+            </div>
+        </div>
+        <p>I have always had a love of art and creating things.  After serving in the US Navy for 11 years I left the service to become a stay at home Mom.  With my family spread across the US I wanted a way to show my family my kids growing up.  So I started learning how to build a website.  Over 10 years later I am still coding and building websites and loving every minuet.</p>
+        <p>After hours of research and several online classes I built my 1st website for a local photographer and found that helping her get her name out there and a place for her to showcase her talents was something I was enjoyed.  After enrolling in an immersive online Full Stack Web Developer school and learning how much more there is to Web Development my desire to help others grew. Now I build websites for others and teach new Developers at <a href="https://codingdojo.com" target="_blank">Coding Dojo</a></p>
+    </main>
+    <footer>
+        {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src='{% static "js/scripts.js"%}'></script>
+</body>
+</html>

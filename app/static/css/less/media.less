@@ -1,0 +1,84 @@
+@import './base.less';
+
+@media @1250 {
+    body {
+        header {
+            .row {
+                img {
+                    max-width: 200px;
+                }
+            }
+        }
+        main {
+            h1 {
+                width: 75%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media @730 {
+    body {
+        header {
+            .row {
+                .flexcolumn();
+
+                img {
+                    margin: .5em .5em 1em;
+                }
+                nav {
+                    width: 85%;
+                }
+            }
+        }
+        footer {
+            .row {
+                .row {
+                    width: 30%;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+
+@media @500 {
+    body {
+        header {
+            text-align: center;
+
+            .row {
+                nav {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        main {
+            .row {
+                #profile {
+                    max-width: 125px;
+                }
+            }
+        }
+    }
+}
+
+@media @400 {
+    body {
+        main {
+            .row {
+                .flexcolumn();
+            }
+        }
+        footer {
+            .row {
+                .flexcolumn();
+
+                .row {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        {% block mainHeader %} {% include 'mainHeader.html' %} {% endblock mainHeader %}
+        {% block mainHeader %} {% include 'base/mainHeader.html' %} {% endblock mainHeader %}
     </header>
     <div class="messages">
         {% if messages %}
@@ -20,11 +20,15 @@
             {% endfor %}
         {% endif %}
     </div>
+    {% block popup %}
+    {% include 'base/popup.html'   %}
+{% endblock popup %}
     <main>
     </main>
     <footer>
-        {% block footer %} {% include 'footer.html'  %} {% endblock %}
+        {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
     </footer>
-    <script src='{% static "js/script.js"%}'></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src='{% static "js/scripts.js"%}'></script>
 </body>
 </html>
