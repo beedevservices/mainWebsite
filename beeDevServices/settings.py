@@ -22,6 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_countries',
     'app.apps.AppConfig',
+    'menus',
+
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

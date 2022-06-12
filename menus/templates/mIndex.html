@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mStyles.css'%}">
+    <link rel="shortcut icon" href="https://images.craftsnherbs.com/bee/IMG_0992.jpg" type="image/x-icon">
+    <title>Menu Selector - BeeDev Services</title>
+</head>
+<body>
+    <header>
+        {% block mainHeader %} {% include 'menuBase/mainHeader.html' %} {% endblock mainHeader %}
+    </header>
+    <div class="messages">
+        {% if messages %}
+            {% for m in messages %}
+                <h5>{{m}}</h5>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <main>
+        <h1>Several types of Menu Styles</h1>
+        <p>This section of the site is so you can view and test several different menu styles to find the one that fits you and your business just right<br><br>Each menu will have a number and name associated with it so you can add it to your request</p>
+        <p>Please remember that the colors are just for display on this site and be customized to your site.  Some menu styles may not work for your website but of course we will do our best to use what you chose</p>
+        <ul>
+            <li><a href="/menus/tabs/">Tab Style Menus</a></li>
+            <li><a href="/menus/hidden/">Hidden Menus</a></li>
+            <li><a href="/menus/sidebars/">Sidebar Menus</a></li>
+            <li><a href="/menus/sticky/">Sticky Menus</a></li>
+            <li><a href="/menus/dropdowns">Dropdowns</a></li>
+        </ul>
+    </main>
+    <footer>
+        {% block footer %} {% include 'base/footer.html'  %} {% endblock footer %}
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src='{% static "js/mScripts.js"%}'></script>
+</body>
+</html>

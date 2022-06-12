@@ -1,0 +1,295 @@
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  background-color: #374671;
+  border: 4px groove #B59E4B;
+  color: #fff;
+}
+body header .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
+  justify-content: space-evenly;
+}
+body header .row img {
+  max-width: 300px;
+}
+body header .row nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  justify-content: space-around;
+}
+body header .row nav a {
+  font-size: 1.2em;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  background-color: #37467125;
+  border: 4px groove #B59E4B;
+}
+body main p {
+  width: 75%;
+}
+body main ul li a {
+  color: #000;
+  text-decoration: underline;
+}
+body main hr {
+  height: 5px;
+  width: 95%;
+  background-color: #B59E4B;
+}
+body main .verticalTabs {
+  font-family: "Lato", sans-serif;
+  width: 95%;
+  margin-bottom: 1em;
+  border: 5px groove #374671;
+  padding: 1em;
+  /* Style the tab */
+  /* Style the tab content */
+}
+body main .verticalTabs * {
+  box-sizing: border-box;
+}
+body main .verticalTabs .tab {
+  float: left;
+  border: 1px solid #B59E4B;
+  background-color: #374671;
+  width: 30%;
+  height: 300px;
+  /* Style the buttons inside the tab */
+  /* Change background color of buttons on hover */
+  /* Create an active/current "tab button" class */
+}
+body main .verticalTabs .tab button {
+  display: block;
+  background-color: inherit;
+  color: #fff;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+body main .verticalTabs .tab button:hover {
+  background-color: #ddd;
+}
+body main .verticalTabs .tab button.active {
+  background-color: #ccc;
+  color: #000;
+}
+body main .verticalTabs .tabcontent01 {
+  float: left;
+  padding: 0px 12px;
+  border: 2px solid #B59E4B;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+}
+body main .tabHeaders {
+  font-family: "Lato", sans-serif;
+  width: 95%;
+  margin-bottom: 1em;
+  border: 5px groove #374671;
+  padding: 1em;
+  /* Style the tab content */
+}
+body main .tabHeaders .tabcontent02 {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+body main .tabHeaders .tablinks02 {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+body main .tabHeaders .tablinks02:hover {
+  background-color: #777;
+}
+body main .tabHeaders #Tab0102 {
+  background-color: red;
+}
+body main .tabHeaders #Tab0202 {
+  background-color: green;
+}
+body main .tabHeaders #Tab0302 {
+  background-color: orange;
+}
+body main .fullPageTabs {
+  width: 95%;
+  margin-bottom: 1em;
+  border: 5px groove #374671;
+  padding: 1em;
+  height: 400px;
+  margin: 0;
+  font-family: Arial;
+}
+body main .fullPageTabs * {
+  box-sizing: border-box;
+}
+body main .fullPageTabs .tablinks03 {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+body main .fullPageTabs .tablinks03:hover {
+  background-color: #777;
+}
+body main .fullPageTabs .tabcontent03 {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+body main .fullPageTabs #Tab0103 {
+  background-color: red;
+}
+body main .fullPageTabs #Tab0203 {
+  background-color: green;
+}
+body main .fullPageTabs #Tab0303 {
+  background-color: orange;
+}
+body footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #374671;
+  width: 95%;
+  border: 4px groove #B59E4B;
+  color: #fff;
+}
+body footer .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+body footer .row .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+body footer .row .row img {
+  max-height: 40px;
+  border-radius: 50%;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+body footer .row .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+@media only screen and (max-width: 1250px) {
+  body header .row img {
+    max-width: 200px;
+  }
+  body main h1 {
+    width: 75%;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 730px) {
+  body header .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body header .row img {
+    margin: 0.5em 0.5em 1em;
+  }
+  body header .row nav {
+    width: 85%;
+  }
+  body footer .row .row {
+    width: 30%;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 500px) {
+  body header {
+    text-align: center;
+  }
+  body header .row nav {
+    flex-wrap: wrap;
+  }
+  body main .row #profile {
+    max-width: 125px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  body main .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body footer .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body footer .row .row {
+    width: 70%;
+  }
+}

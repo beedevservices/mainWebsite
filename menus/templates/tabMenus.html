@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mStyles.css'%}">
+    <link rel="shortcut icon" href="https://images.craftsnherbs.com/bee/IMG_0992.jpg" type="image/x-icon">
+    <title>Menu Selector - BeeDev Services</title>
+</head>
+<body>
+    <header>
+        {% block mainHeader %} {% include 'menuBase/mainHeader.html' %} {% endblock mainHeader %}
+    </header>
+    <div class="messages">
+        {% if messages %}
+            {% for m in messages %}
+                <h5>{{m}}</h5>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <main>
+        <h1>Tab Style Menus</h1>
+        <hr>
+        <h2>Vertical Tabs</h2>
+        <div class="verticalTabs">
+            <div class="tab">
+                <button class="tablinks01" onclick="openTab01(event, 'Tab01')" id="defaultOpen01">Tab01</button>
+                <button class="tablinks01" onclick="openTab01(event, 'Tab02')">Tab02</button>
+                <button class="tablinks01" onclick="openTab01(event, 'Tab03')">Tab03</button>
+            </div>
+            <div id="Tab01" class="tabcontent01">
+                <h3>Tab #1 Content</h3>
+                <p>I am the content that is showing in tab #1</p>
+            </div>
+            <div id="Tab02" class="tabcontent01">
+                <h3>Tab #2 Content</h3>
+                <p>The second tab's content</p>
+            </div>
+            <div id="Tab03" class="tabcontent01">
+                <h3>Tab #3 Content</h3>
+                <p>I am the content that is showing in tab #3</p>
+                <p>Do you like this style?</p>
+            </div>
+        </div>
+        <hr>
+        <h2>Tab Headers</h2>
+        <div class="tabHeaders">
+            <div id="Tab0102" class="tabcontent02">
+                <h3>Tab #1 Content</h3>
+                <p>I am the content that is showing in tab #1</p>
+            </div>
+            <div id="Tab0202" class="tabcontent02">
+                <h3>Tab #2 Content</h3>
+                <p>The second tab's content</p>
+            </div>
+            <div id="Tab0302" class="tabcontent02">
+                <h3>Tab #3 Content</h3>
+                <p>I am the content that is showing in tab #3</p>
+                <p>Do you like this style?</p>
+            </div>
+            <button class="tablinks02" onclick="openTab02('Tab0102', this, 'red')" id="defaultOpen02">Tab01</button>
+            <button class="tablinks02" onclick="openTab02('Tab0202', this, 'green')">Tab02</button>
+            <button class="tablinks02" onclick="openTab02('Tab0302', this, 'orange')">Tab03</button>
+        </div>
+        <hr>
+        <h2>Full Page Tabs</h2>
+        <div class="fullPageTabs">
+            <button class="tablinks03" onclick="openTab03('Tab0103', this, 'red')" id="defaultOpen03">Tab01</button>
+            <button class="tablinks03" onclick="openTab03('Tab0203', this, 'green')">Tab02</button>
+            <button class="tablinks03" onclick="openTab03('Tab0303', this, 'orange')">Tab03</button>
+            <div id="Tab0103" class="tabcontent03">
+                <h3>Tab #1 Content</h3>
+                <p>I am the content that is showing in tab #1</p>
+            </div>
+            <div id="Tab0203" class="tabcontent03">
+                <h3>Tab #2 Content</h3>
+                <p>The second tab's content</p>
+            </div>
+            <div id="Tab0303" class="tabcontent03">
+                <h3>Tab #3 Content</h3>
+                <p>I am the content that is showing in tab #3</p>
+                <p>Do you like this style?</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        {% block footer %} {% include 'base/footer.html'  %} {% endblock footer %}
+    </footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src='{% static "js/mScripts.js"%}'></script>
+</body>
+</html>

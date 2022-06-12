@@ -1,0 +1,219 @@
+@import './less/mBase.less';
+
+body {
+    .flexcolumn();
+
+    header {
+        .flexcolumn();
+        width: 95%;
+        background-color: @bg01;
+        border: @border01;
+        color: #fff;
+
+        .row {
+            .flexrow();
+            width: 99%;
+            justify-content: space-evenly;
+            
+            img {
+                max-width: 300px;
+            }
+            nav {
+                .flexrow();
+                width: 50%;
+                justify-content: space-around;
+
+                a {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+    main {
+        .flexcolumn();
+        width: 95%;
+        background-color: @bg02;
+        border: @border01;
+
+        p {
+            width: 75%;
+        }
+        ul {
+            li {
+                a {
+                    color: #000;
+                    text-decoration: underline;
+                }
+            }
+        }
+        hr {
+            height: 5px;
+            width: 95%;
+            background-color: @border;
+        }
+        .verticalTabs {
+            font-family: "Lato", sans-serif;
+            width: 95%;
+            margin-bottom: 1em;
+            border: 5px groove @bg01;
+            padding: 1em;
+
+            * {
+                box-sizing: border-box;
+            }
+
+                /* Style the tab */
+            .tab {
+                float: left;
+                border: 1px solid @border;
+                background-color: @bg01;
+                width: 30%;
+                height: 300px;
+
+                /* Style the buttons inside the tab */
+                button {
+                    display: block;
+                    background-color: inherit;
+                    color: #fff;
+                    padding: 22px 16px;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    text-align: left;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    font-size: 17px;
+                }
+                /* Change background color of buttons on hover */
+                button:hover {
+                    background-color: #ddd;
+                }
+                /* Create an active/current "tab button" class */
+                button.active {
+                    background-color: #ccc;
+                    color: #000;
+                }
+            }
+            /* Style the tab content */
+            .tabcontent01 {
+                float: left;
+                padding: 0px 12px;
+                border: 2px solid @border;
+                width: 70%;
+                border-left: none;
+                height: 300px;
+            }
+        }
+        .tabHeaders {
+            font-family: "Lato", sans-serif;
+            width: 95%;
+            margin-bottom: 1em;
+            border: 5px groove @bg01;
+            padding: 1em;
+
+            /* Style the tab content */
+            .tabcontent02 {
+                color: white;
+                display: none;
+                padding: 50px;
+                text-align: center;
+            }
+            .tablinks02 {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 17px;
+                width: 25%;
+            }
+
+            .tablinks02:hover {
+                background-color: #777;
+            }
+            #Tab0102 {
+                background-color: red;
+            }
+            #Tab0202 {
+                background-color: green;
+            }
+            #Tab0302 {
+                background-color: orange;
+            }
+        }
+        .fullPageTabs {
+            width: 95%;
+            margin-bottom: 1em;
+            border: 5px groove @bg01;
+            padding: 1em;
+            height: 400px;
+            margin: 0;
+            font-family: Arial;
+
+            * {
+                box-sizing: border-box
+            }
+            .tablinks03 {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 17px;
+                width: 25%;
+            }
+            .tablinks03:hover {
+                background-color: #777;
+            }
+            .tabcontent03 {
+                color: white;
+                display: none;
+                padding: 100px 20px;
+                height: 100%;
+            }
+            #Tab0103 {
+                background-color: red;
+            }
+            #Tab0203 {
+                background-color: green;
+            }
+            #Tab0303 {
+                background-color: orange;
+            }
+        }
+    }
+    footer {
+        .flexcolumn();
+        background-color: @bg01;
+        width: 95%;
+        border: @border01;
+        color: #fff;
+        
+        .row {
+            .flexrow();
+            width: 85%;
+
+            .row {
+                .flexrow();
+                width: 50%;
+
+                img {
+                    max-height: 40px;
+                    border-radius: 50%;
+                    padding: .5em;
+                    margin: .5em;
+                }
+            }
+            .column {
+                .flexcolumn();
+                width: 50%;
+            }
+        }
+    }
+}
+
+@import './less/mMedia.less';
