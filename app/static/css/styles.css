@@ -118,9 +118,13 @@ body main {
   width: 95%;
   background-color: #37467125;
   border: 4px groove #B59E4B;
+  background-image: url('https://images.craftsnherbs.com/beedev/bg02new.png');
 }
 body main p {
   width: 75%;
+}
+body main .pMain {
+  font-size: 1.1em;
 }
 body main .row {
   display: flex;
