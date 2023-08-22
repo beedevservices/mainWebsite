@@ -1,0 +1,98 @@
+@import './less/base.less';
+@import 'popup.less';
+
+body {
+    .flexcolumn();
+
+    header {
+        .flexcolumn();
+        width: 95%;
+        background-color: @bg01;
+        border: @border01;
+        color: #fff;
+
+        .row {
+            .flexrow();
+            width: 99%;
+            justify-content: space-evenly;
+            
+            img {
+                max-width: 300px;
+            }
+            nav {
+                .flexrow();
+                width: 50%;
+                justify-content: space-around;
+
+                a {
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+    main {
+        .flexcolumn();
+        width: 95%;
+        background-color: @bg02;
+        border: @border01;
+        background-image: url('https://images.craftsnherbs.com/beedev/bg02new.png');
+
+        p {
+            width: 75%;
+        }
+        .pMain {
+            font-size: 1.1em;
+        }
+        .row {
+            .flexrow();
+            width: 95%;
+
+            #profile {
+                max-width: 200px;
+                border-radius: 50%;
+                margin: .5em 1em;
+            }
+            .column {
+                .flexcolumn();
+
+                p {
+                    text-align: center;
+
+                    a {
+                        color: @bg01;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        .flexcolumn();
+        background-color: @bg01;
+        width: 95%;
+        border: @border01;
+        color: #fff;
+        
+        .row {
+            .flexrow();
+            width: 85%;
+
+            .row {
+                .flexrow();
+                width: 50%;
+
+                img {
+                    max-height: 40px;
+                    border-radius: 50%;
+                    padding: .5em;
+                    margin: .5em;
+                }
+            }
+            .column {
+                .flexcolumn();
+                width: 50%;
+            }
+        }
+    }
+}
+
+@import './less/media.less';

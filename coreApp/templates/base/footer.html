@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block footer %}
+        <footer>
+            <div class="row">
+                <div class="row">
+                    <img src="https://images.craftsnherbs.com/beedev/bee-icon.jpg" alt="BeeIcon">
+                    <a href="https://github.com/beedevservices" target="_blank"><img src="https://images.craftsnherbs.com/icons/github.png" alt="Github"></a>
+                    <a href="https://www.linkedin.com/in/melissa-longenberger/" target="_blank"><img src="https://images.craftsnherbs.com/icons/linkedin.png" alt="LinkedIn"></a>
+                </div>
+                <div class="column">
+                    <h4>Created by BeeDev Services &copy; 2023</h4>
+                    <h4>Located in Columbia County, PA</h4>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+        <script src='{% static "js/scripts.js"%}'></script>
+    {% endblock footer %}
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %} {% include 'base/head.html' %} {% endblock head %}
+<body>
+    {% block header %} {% include 'base/header.html' %} {% endblock header %}
+    {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
+    {% block popup %} {% include 'base/popup.html' %} {% endblock popup %}
+    <main>
+        <h1>Trust our Hive with your website needs while keeping in touch with who you are</h1>
+        <p class="pMain">
+            Bee hives are created by the work of the entire colony of Bee's. Here at BeeDev Services so do we.  We can provide tailor-made solutions because we see our clients as partners and co-creators.  It all starts from 1st Contact
+        </p>
+        <p class="pMain">
+            Once you reach out we listen to you and your ideas.  We have the skills, but you know your needs better than we do.  
+        </p>
+        <p class="pMain">
+            We offer updates on the progress as often as you want them. We involve you in every step that you want to be a part of.
+        </p>
+        <h2>Our commitment:</h2>
+        <p class="pMain">We promise to keep our customers informed and in the loop through out the process and explain the why if something had to change.  We promise to produce quality unique websites for our customers.</p>
+        <h2>Currently we have staff that is proficient in the following technologies:</h2>
+        <ul>
+            <li>Java</li>
+            <li>React</li>
+            <li>Vite</li>
+            <li>Express/Node</li>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>Django</li>
+            <li>C#</li>
+            <li>Wordpress</li>
+            <li>as well as several different tools like HackMd and Notion</li>
+        </ul>
+        <h2>Service Highlights:</h2>
+        <h3>Customer and/or Employee Facing Websites / Tools</h3>
+        <ul>
+            <li>Packages can include any combination of the following:
+                <ul>
+                    <li>Design / Develop</li>
+                    <li>Maintain</li>
+                    <li>Update</li>
+                    <li>Repair</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+    {% block footer %} {% include 'base/footer.html'  %} {% endblock footer %}
+</body>
+</html>
