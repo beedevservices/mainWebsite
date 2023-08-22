@@ -69,16 +69,17 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'mysql.connector.django',
-#         'NAME': 'thehives_beedev',
-#         'USER': 'root',
-#         'PASSWORD': 'HoneyBee#4',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'thehives_beedev',
+        'USER': 'root',
+        'PASSWORD': 'HoneyBee#4',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        # 'OPTIONS': {'charset': 'utf8mb4'},
+    }
+}
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

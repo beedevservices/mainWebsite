@@ -1,15 +1,15 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<body>
     {% block mainHeader %}
-        <div class="row">
-            <img src="https://images.craftsnherbs.com/logos/beedevNew.png" alt="BeeDev Logo">
-            <nav>
-                {% block menu %} {% include 'base/menu.html'  %} {% endblock menu %}
-            </nav>
-        </div>
-        <h1>Let our Hive make a difference!!</h1>
+        <header>
+            <div class="row">
+                <img src="https://images.craftsnherbs.com/logos/beedevNew.png" alt="BeeDev Logo">
+                <nav>
+                    {% block menu %} {% include 'base/menu.html'  %} {% endblock menu %}
+                </nav>
+            </div>
+            <h1>Let our Hive make a difference!!</h1>
+        </header>
     {% endblock mainHeader %}
-</body>
 </html>
