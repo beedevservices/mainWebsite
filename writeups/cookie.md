@@ -1,11 +1,11 @@
-My Company BeeDev Services (“us”, “we”, or “our”) uses cookies on My Website https://beedev-services.com (the “Service”). By using the Service, you consent to the use of cookies. Our Cookies Policy explains what cookies are, how we use cookies, how third-parties we may partner with may use cookies on the Service, your choices regarding cookies and further information about cookies.
+BeeDev Services (“us”, “we”, or “our”) uses cookies on  https://beedev-services.com (the “Service”). By using the Service, you consent to the use of cookies. Our Cookies Policy explains what cookies are, how we use cookies, how third-parties we may partner with may use cookies on the Service, your choices regarding cookies and further information about cookies.
 What are cookies
 
 Cookies are small pieces of text sent by your web browser by a website you visit. A cookie file is stored in your web browser and allows the Service or a third-party to recognize you and make your next visit easier and the Service more useful to you. Cookies can be “persistent” or “session” cookies.
 
 How https://beedev-services.com uses cookies
 
-When you use and access the Service, we may place a number of cookies files in your web browser.We use cookies for the following purposes: to enable certain functions of the Service, to provide analytics, to store your preferences, to enable advertisements delivery, including behavioral advertising.The cookies we may use on the may be categorized as follows:
+When you use and access the Service, we may place a number of cookies files in your web browser. We use cookies for the following purposes: to enable certain functions of the Service, to provide analytics, to store your preferences, to enable advertisements delivery, including behavioral advertising.The cookies we may use on the may be categorized as follows:
 
 Strictly necessary
 Performance

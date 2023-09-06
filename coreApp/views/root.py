@@ -31,3 +31,16 @@ def about(request):
         'user': user,
     }
     return render(request, 'about.html', context)
+
+def projects(request):
+    title = {
+        'title': 'Past/Current Projects',
+        'header': 'Our Work'
+    }
+    if 'user_id' not in request.session:
+        user = False
+    context = {
+        'title': title,
+        'user': user,
+    }
+    return render(request, 'projects.html', context)

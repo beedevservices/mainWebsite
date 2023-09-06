@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %} {% include 'base/head.html' %} {% endblock head %}
+<body>
+    {% block header %} {% include 'base/header.html' %} {% endblock header %}
+    {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
+    {% block popup %} {% include 'base/popup.html' %} {% endblock popup %}
+    <main>
+        <div class="projects">
+            <h2>Hive Mentor</h2>
+            <div class="pMain">A special project developed with techies in mind.  A place for techies to gather and talk about their mental health or log about their health.</div>
+            <a href="https://hivementor.beedev-services.com" target="_blank">Hive Mentor</a>
+        </div>
+        <div class="projects">
+            <h2>Kowabunga Hooker</h2>
+            <div class="pMain">A custom E-Commerce website for a growing crochet business.</div>
+            <a href="https://kowabunga-hooker.com" target="_blank">Kowabunga Hooker</a>
+        </div>
+    </main>
+    {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
+</body>
+</html>

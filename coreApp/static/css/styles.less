@@ -41,7 +41,38 @@ body {
             width: 75%;
         }
         .pMain {
-            font-size: 1.1em;
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+        ul {
+            li {
+                font-size: 1.3em;
+                font-weight: 500;
+                ul {
+                    li {
+                        font-size: 1.1em;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .projects {
+            .flexcolumn();
+            border: @border01;
+            max-width: 500px;
+            padding: 1em;
+            margin: 1em;
+            
+            .pMain {
+                font-size: 1.3em;
+                font-weight: 500;
+            }
+            a {
+                color: @bg01;
+                font-size: 1.2em;
+                font-weight: 500;
+            }
+            
         }
         .row {
             .flexrow();

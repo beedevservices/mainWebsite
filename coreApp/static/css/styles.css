@@ -124,7 +124,35 @@ body main p {
   width: 75%;
 }
 body main .pMain {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+body main ul li {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+body main ul li ul li {
   font-size: 1.1em;
+  font-weight: 500;
+}
+body main .projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px groove #B59E4B;
+  max-width: 500px;
+  padding: 1em;
+  margin: 1em;
+}
+body main .projects .pMain {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+body main .projects a {
+  color: #374671;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 body main .row {
   display: flex;
