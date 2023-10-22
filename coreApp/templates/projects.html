@@ -6,16 +6,22 @@
     {% block header %} {% include 'base/header.html' %} {% endblock header %}
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
-        <div class="projects">
-            <h2>Hive Mentor</h2>
-            <div class="pMain">A special project developed with techies in mind.  A place for techies to gather and talk about their mental health or log about their health.</div>
-            <a href="https://hivementor.beedev-services.com" target="_blank">Hive Mentor</a>
-        </div>
-        <div class="projects">
-            <h2>Kowabunga Hooker</h2>
-            <div class="pMain">A custom E-Commerce website for a growing crochet business.</div>
-            <a href="https://kowabunga-hooker.com" target="_blank">Kowabunga Hooker</a>
-        </div>
+        {% for project in projects %}
+            <div class="projects">
+                <h2>{{project.title}}</h2>
+                <div class="pMain">
+                    {{project.description}}
+                    <p>Published: {{project.published}}</p>
+                    <p>Last Updated: {{project.lastUpdated}}</p>
+                </div>
+                {% if project.url == '#' %}
+                    Site Not Deployed
+                {% else %}
+                <a href="{{project.url}}" target="_blank">{{project.title}}</a>
+                {% endif %}
+                <a href="{{project.source}}" target="_blank">Source Code</a>
+            </div>
+        {% endfor %}
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
 </body>

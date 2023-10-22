@@ -3,3 +3,4 @@ from .models import *
 
 admin.site.register(Service)
 admin.site.register(Info)
+admin.site.register(Projects)

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from coreApp.models import *
 
 # title = {
 #     'title': '',
@@ -39,8 +40,10 @@ def projects(request):
     }
     if 'user_id' not in request.session:
         user = False
+    projects = Projects.objects.all().order_by('-lastUpdated').values
     context = {
         'title': title,
         'user': user,
+        'projects': projects,
     }
     return render(request, 'projects.html', context)
