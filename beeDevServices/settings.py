@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'adminApp.apps.AdminappConfig',
     'customerApp.apps.CustomerappConfig',
     'orderApp.apps.OrderappConfig',
+    'employeeApp.apps.EmployeeappConfig',
     'corsheaders',
     'rest_framework',
     # 'django_hosts',

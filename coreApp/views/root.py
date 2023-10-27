@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from coreApp.models import *
+from customerApp.models import *
+from adminApp.models import *
+from employeeApp.models import *
 
 # title = {
 #     'title': '',
@@ -12,11 +15,18 @@ def index(request):
         'title': 'Home',
         'header': 'BeeDev Services',
     }
-    if 'user_id' not in request.session:
-        user = False
+    if 'client_id' not in request.session:
+        client = False
+    else:
+        client = Customer.objects.get(id=request.session['client_id'])
+    if 'employee_id' not in request.session:
+        employee = False
+    else:
+        employee = Employee.objects.get(id=request.session['employee-id'])
     context = {
         'title': title,
-        'user': user,
+        'client': client,
+        'employee': employee
     }
     return render(request, 'index.html', context)
 
@@ -25,11 +35,18 @@ def about(request):
         'title': 'About',
         'header': 'BeeDev Services',
     }
-    if 'user_id' not in request.session:
-        user = False
+    if 'client_id' not in request.session:
+        client = False
+    else:
+        client = Customer.objects.get(id=request.session['client_id'])
+    if 'employee_id' not in request.session:
+        employee = False
+    else:
+        employee = Employee.objects.get(id=request.session['employee-id'])
     context = {
         'title': title,
-        'user': user,
+        'client': client,
+        'employee': employee
     }
     return render(request, 'about.html', context)
 
@@ -38,12 +55,43 @@ def projects(request):
         'title': 'Past/Current Projects',
         'header': 'Our Work'
     }
-    if 'user_id' not in request.session:
-        user = False
-    projects = Projects.objects.all().order_by('-lastUpdated').values
+    projects = Projects.objects.all().order_by('-lastUpdated').values  
+    if 'client_id' not in request.session:
+        client = False
+    else:
+        client = Customer.objects.get(id=request.session['client_id'])
+    if 'employee_id' not in request.session:
+        employee = False
+    else:
+        employee = Employee.objects.get(id=request.session['employee-id'])
     context = {
         'title': title,
-        'user': user,
+        'client': client,
+        'employee': employee,
         'projects': projects,
     }
     return render(request, 'projects.html', context)
+
+def services(request):
+    title = {
+        'title': 'Services',
+        'header': 'Our Services'
+    }
+    services = Service.objects.all().values()
+    infos = Info.objects.all().values()
+    if 'client_id' not in request.session:
+        client = False
+    else:
+        client = Customer.objects.get(id=request.session['client_id'])
+    if 'employee_id' not in request.session:
+        employee = False
+    else:
+        employee = Employee.objects.get(id=request.session['employee-id'])
+    context = {
+        'title': title,
+        'client': client,
+        'employee': employee,
+        'services': services,
+        'infos': infos,
+    }
+    return render(request, 'services.html', context)
