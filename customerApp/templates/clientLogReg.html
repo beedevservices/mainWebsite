@@ -7,7 +7,7 @@
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
         <div class="row">
-            <form action='/user/login/' method='post' id="login">
+            <form action='/client/login/' method='post' id="login">
                 {% csrf_token %}
                 <section>
                     <label for='username'>Username</label>
@@ -19,7 +19,7 @@
                 </section>
                 <button>Sign In</button>
             </form>
-            <form action='/user/reg/' method='post' id="reg">
+            <form action='/client/reg/' method='post' id="reg">
                 {% csrf_token %}
                 <section>
                     <label for='firstName'>First Name:</label>
@@ -30,12 +30,12 @@
                     <input type='text' name='lastName' >
                 </section>
                 <section>
-                    <label for='username'>Username:</label>
-                    <input type='text' name='username' >
-                </section>
-                <section>
                     <label for="email">Email: </label>
                     <input type="email" name="email">
+                </section>
+                <section>
+                    <label for='company'>Company Name:</label>
+                    <input type='text' name='company' >
                 </section>
                 <section>
                     <label for='password'>Password:</label>

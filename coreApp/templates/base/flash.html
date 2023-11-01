@@ -3,7 +3,13 @@
 <html lang="en">
     {% block flash %}
         <div>
-            <span class="session">{{site}} - {{role}}</span>
+            {% if employee != False %}
+                <span class="session">{{employee.firstName}}</span>
+            {% elif client != False %}
+                <span class="session">{{client.firstName}}</span>
+            {% else %}
+                <span class="session">Guest</span>
+            {% endif %}
             {% if messages %}
             <section class='messages'>
                 {% for message in messages %}

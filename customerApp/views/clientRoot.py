@@ -16,10 +16,13 @@ def clientPortal(request):
     client = Customer.objects.get(id=request.session['client_id'])
     if 'employee_id' in request.session:
         return redirect('/employee/')
+    employee = False
     context = {
         'title': title,
         'client': client,
+        'employee': employee
     }
+    print('what is context:', context)
     return render(request, 'clientDash.html', context)
 
 def clientLogReg(request):

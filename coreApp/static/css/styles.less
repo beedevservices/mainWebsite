@@ -79,6 +79,45 @@ body {
             .flexrow();
             width: 95%;
 
+            #login, #reg {
+                .flexcolumn();
+                margin: 2em;
+                padding: 1.5em;
+                width: 20%;
+                border: @border01;
+
+                section {
+                    width: 100%;
+                    .flexrow();
+                    margin: 1em;
+                    justify-content: space-between;
+                }
+
+                button {
+                    background-color: @border;
+                    color: @bg01;
+                    padding: .5em;
+                    font-size: 1.1em;
+                    font-weight: 700;
+                }
+            }
+            .logReg {
+                background-color: @border;
+                color: @bg01;
+                padding: .5em;
+                font-size: 1em;
+                font-weight: 700;
+
+                a {
+                    color: @bg01;
+                    text-decoration: none;
+                }
+            }
+
+            #reg {
+                display: none;
+            }
+
             #profile {
                 max-width: 200px;
                 border-radius: 50%;

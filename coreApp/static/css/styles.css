@@ -103,6 +103,49 @@ body main .row {
   align-items: center;
   width: 95%;
 }
+body main .row #login,
+body main .row #reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  padding: 1.5em;
+  width: 20%;
+  border: 4px groove #B59E4B;
+}
+body main .row #login section,
+body main .row #reg section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  justify-content: space-between;
+}
+body main .row #login button,
+body main .row #reg button {
+  background-color: #B59E4B;
+  color: #374671;
+  padding: 0.5em;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+body main .row .logReg {
+  background-color: #B59E4B;
+  color: #374671;
+  padding: 0.5em;
+  font-size: 1em;
+  font-weight: 700;
+}
+body main .row .logReg a {
+  color: #374671;
+  text-decoration: none;
+}
+body main .row #reg {
+  display: none;
+}
 body main .row #profile {
   max-width: 200px;
   border-radius: 50%;

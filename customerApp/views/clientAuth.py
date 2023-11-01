@@ -24,7 +24,7 @@ def clientReg(request):
         for err in errors.values():
             messages.error(request, err)
         return redirect('/client/logReg')
-    hashedPw = bcrypt.hashpw(request.POST['password'].encode90, bcrypt.gensalt()).decode()
+    hashedPw = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt()).decode()
     newClient = Customer.objects.create(
         firstName = request.POST['firstName'],
         lastName = request.POST['lastName'],
