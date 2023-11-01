@@ -120,6 +120,10 @@ body main .row .column p {
 body main .row .column p a {
   color: #374671;
 }
+body main #tawk-iframe {
+  width: 55%;
+  height: 900px;
+}
 body footer {
   display: flex;
   flex-direction: column;

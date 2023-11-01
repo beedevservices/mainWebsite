@@ -95,3 +95,23 @@ def services(request):
         'infos': infos,
     }
     return render(request, 'services.html', context)
+
+def contact(request):
+    title = {
+        'title': 'Contact',
+        'header': 'Contact Us'
+    }
+    if 'client_id' not in request.session:
+        client = False
+    else:
+        client = Customer.objects.get(id=request.session['client_id'])
+    if 'employee_id' not in request.session:
+        employee = False
+    else:
+        employee = Employee.objects.get(id=request.session['employee-id'])
+    context = {
+        'title': title,
+        'client': client,
+        'employee': employee,
+    }
+    return render(request, 'contact.html', context)
