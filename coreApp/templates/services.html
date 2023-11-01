@@ -5,8 +5,20 @@
 <body>
     {% block header %} {% include 'base/header.html' %} {% endblock header %}
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
-    {% block popup %} {% include 'base/popup.html' %} {% endblock popup %}
     <main>
+        {% for service in services %}
+            <div class="services">
+                <h2>{{service.title}}</h2>
+                <h3>{{service.package}}</h3>
+                <ul>
+                    {% for info in infos %}
+                        {% if service.id == info.service_id %}
+                            <li>{{info.info}}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
 </body>

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %} {% include 'base/head.html' %} {% endblock head %}
+<body>
+    {% block header %} {% include 'base/header.html' %} {% endblock header %}
+    {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
+    <main>
+        {% for project in projects %}
+            <div class="projects">
+                <h2>{{project.title}}</h2>
+                <div class="pMain">
+                    {{project.description}}
+                    <p>Published: {{project.published}}</p>
+                    <p>Last Updated: {{project.lastUpdated}}</p>
+                </div>
+                {% if project.url == '#' %}
+                    Site Not Deployed
+                {% else %}
+                <a href="{{project.url}}" target="_blank">{{project.title}}</a>
+                {% endif %}
+                <a href="{{project.source}}" target="_blank">Source Code</a>
+            </div>
+        {% endfor %}
+    </main>
+    {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
+</body>
+</html>

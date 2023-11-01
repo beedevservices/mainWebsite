@@ -5,11 +5,13 @@ from adminApp import views as app_views
 from coreApp import views as app_views
 from customerApp import views as app_views
 from orderApp import views as app_views
+from employeeApp import views as app_views
 
 urlpatterns = [
     path('', include('coreApp.urls')),
     path('admin/', admin.site.urls),
     path('client/', include('customerApp.urls')),
-    path('invoice/', include('orderApp.urls')),
-    path('private/', include('adminApp.urls')),
+    path('order/', include('orderApp.urls')),
+    path('company/', include('adminApp.urls')),
+    path('employee/', include('employeeApp.urls')),
 ]

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'adminApp.apps.AdminappConfig',
     'customerApp.apps.CustomerappConfig',
     'orderApp.apps.OrderappConfig',
+    'employeeApp.apps.EmployeeappConfig',
     'corsheaders',
     'rest_framework',
     # 'django_hosts',
@@ -80,18 +81,25 @@ WSGI_APPLICATION = 'beeDevServices.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        # 'ENGINE':'django.db.backends.mysql',
-        'NAME': 'thehives_beedev',
-        'USER': 'root',
-        # 'USER': 'thehives_services',
-        'PASSWORD': 'HoneyBee#4',
-        # 'PASSWORD': 'MrTucker@22',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        # 'OPTIONS': {'charset': 'utf8mb4'},
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mysql.connector.django',
+#         # 'ENGINE':'django.db.backends.mysql',
+#         'NAME': 'thehives_beedev',
+#         'USER': 'root',
+#         # 'USER': 'thehives_services',
+#         'PASSWORD': 'HoneyBee#4',
+#         # 'PASSWORD': 'MrTucker@22',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#         # 'OPTIONS': {'charset': 'utf8mb4'},
+#     }
+# }
 
 
 # Password validation
