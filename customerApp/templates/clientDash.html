@@ -3,10 +3,17 @@
 <html lang="en">
     {% block head %} {% include 'base/head.html' %} {% endblock head %}
 <body>
-    {% block header %} {% include 'clientBase/header.html' %} {% endblock header %}
+    {% block clientHeader %} {% include 'clientBase/header.html' %} {% endblock clientHeader %}
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
-        <h1>Client Dash</h1>
+        <h1>
+            {% if client.company != '' %}
+                {{client.company}} Dashboard
+            {% else %}
+                {{client.firstName}}'s Dashboard
+            {% endif %}
+        </h1>
+
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
 </body>

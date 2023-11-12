@@ -52,6 +52,22 @@ body header .row nav {
 body header .row nav a {
   font-size: 1.2em;
 }
+body header .row .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+body header .row .column nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1.5em;
+  justify-content: space-between;
+}
 body main {
   display: flex;
   flex-direction: column;

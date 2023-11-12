@@ -115,3 +115,9 @@ def contact(request):
         'employee': employee,
     }
     return render(request, 'contact.html', context)
+
+
+def logout(request):
+    request.session.clear()
+    messages.error(request, 'You have been logged out')
+    return redirect('/')

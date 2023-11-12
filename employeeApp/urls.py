@@ -6,8 +6,8 @@ from django.conf.urls.static import static
 # All urls start with employee/
 
 urlpatterns = [
-    # path('', views.adminDash),
-    # path('logReg/', views.adminLogReg),
+    path('', views.employeePortal),
+    path('logReg/', views.employeeLogReg),
     # path('login/', views.adminLogin),
     # path('reg/', views.adminReg),
 ]

@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    {% block clientHeader %}
+    {% block employeeHeader %}
         <header>
             <div class="row">
                 <img src="https://images.craftsnherbs.com/logos/beedevNew.png" alt="BeeDev Logo">
@@ -10,12 +10,12 @@
                         {% block menu %} {% include 'base/menu.html'  %} {% endblock menu %}
                     </nav>
                     <nav>
-                        {% block clientMenu %} {% include 'clientBase/menu.html'  %} {% endblock clientMenu %}
+                        {% block employeeMenu %} {% include 'employeeBase/menu.html'  %} {% endblock employeeMenu %}
                     </nav>
                 </div>
                 
             </div>
             <h1>Let our Hive make a difference!!</h1>
         </header>
-    {% endblock clientHeader %}
+    {% endblock employeeHeader %}
 </html>

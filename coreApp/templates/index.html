@@ -3,7 +3,13 @@
 <html lang="en">
     {% block head %} {% include 'base/head.html' %} {% endblock head %}
 <body>
-    {% block header %} {% include 'base/header.html' %} {% endblock header %}
+    {% if client %}
+        {% block clientHeader %} {% include 'clientBase/header.html' %} {% endblock clientHeader %}
+    {% elif employee %}
+        {% block employeeHeader %} {% include 'employeeBase/header.html' %} {% endblock employeeHeader %}
+    {% else %}
+        {% block header %} {% include 'base/header.html' %} {% endblock header %}
+    {% endif %}
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
         <h1>Trust our Hive with your website needs while keeping in touch with who you are</h1>
