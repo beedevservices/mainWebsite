@@ -21,7 +21,7 @@ def termsOfUse(request):
 
 def cookies(request):
     title = {
-        'title': 'Home',
+        'title': 'Cookie Use',
         'header': 'BeeDev Services',
     }
     if 'user_id' not in request.session:
@@ -30,7 +30,7 @@ def cookies(request):
         'title': title,
         'user': user,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'cookie.html', context)
 
 def disclaimer(request):
     title = {
