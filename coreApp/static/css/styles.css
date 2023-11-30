@@ -46,11 +46,22 @@ body header .row nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 70%;
   justify-content: space-around;
+}
+body header .row nav .icon {
+  display: none;
 }
 body header .row nav a {
   font-size: 1.2em;
+}
+body header .row nav #myLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
 }
 body header .row .column {
   display: flex;
@@ -80,6 +91,12 @@ body main {
 }
 body main p {
   width: 75%;
+}
+body main h3 {
+  font-size: 1.6em;
+}
+body main h4 {
+  font-size: 1.4em;
 }
 body main .pMain {
   font-size: 1.3em;
@@ -178,6 +195,12 @@ body main .row .column p {
 }
 body main .row .column p a {
   color: #374671;
+}
+body main .row .column h3 {
+  font-size: 1.6em;
+}
+body main .row .column h4 {
+  font-size: 1.4em;
 }
 body main #tawk-iframe {
   width: 55%;

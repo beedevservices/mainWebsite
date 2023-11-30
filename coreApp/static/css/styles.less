@@ -22,11 +22,21 @@ body {
             }
             nav {
                 .flexrow();
-                width: 50%;
+                width: 70%;
                 justify-content: space-around;
+
+                .icon {
+                    display: none;
+                }
 
                 a {
                     font-size: 1.2em;
+                }
+
+                #myLinks {
+                    .flexrow();
+                    width: 100%;
+                    justify-content: space-around;
                 }
             }
             .column {
@@ -51,6 +61,12 @@ body {
 
         p {
             width: 75%;
+        }
+        h3 {
+            font-size: 1.6em;
+        }
+        h4 {
+            font-size: 1.4em;
         }
         .pMain {
             font-size: 1.3em;
@@ -143,6 +159,12 @@ body {
                     a {
                         color: @bg01;
                     }
+                }
+                h3 {
+                    font-size: 1.6em;
+                }
+                h4 {
+                    font-size: 1.4em;
                 }
             }
         }
