@@ -10,35 +10,28 @@ body {
         width: 95%;
         background-color: @bg01;
         border: @border01;
-        color: #fff;
 
-        .row {
+        nav {
             .flexrow();
-            width: 99%;
+            margin: 1em;
+            flex-wrap: wrap;
+            width: 85%;
             justify-content: space-evenly;
-            
-            img {
-                max-width: 300px;
-            }
-            nav {
-                .flexrow();
-                width: 50%;
-                justify-content: space-around;
+
+            #myLinks {
 
                 a {
-                    font-size: 1.2em;
+                    text-decoration: none;
+                    padding: 1em;
+                    margin: .5em;
+                    border-radius: 30%;
+                    box-shadow: 5px 5px @lt02;
+                    border: 1px solid @lt02;
+                    color: @ltfont;
+                    background-color: @ltbgtrasnarent;
+                    font-weight: 900;
                 }
-            }
-            .column {
-                .flexcolumn();
-                width: 60%;
-
-                nav {
-                    .flexrow();
-                    width: 100%;
-                    margin: 1.5em;
-                    justify-content: space-between;
-                }
+                
             }
         }
     }
@@ -49,103 +42,6 @@ body {
         border: @border01;
         background-image: url('https://images.craftsnherbs.com/beedev/bg02new.png');
 
-        p {
-            width: 75%;
-        }
-        .pMain {
-            font-size: 1.3em;
-            font-weight: 500;
-        }
-        ul {
-            li {
-                font-size: 1.3em;
-                font-weight: 500;
-                ul {
-                    li {
-                        font-size: 1.1em;
-                        font-weight: 500;
-                    }
-                }
-            }
-        }
-        .projects {
-            .flexcolumn();
-            border: @border01;
-            max-width: 500px;
-            padding: 1em;
-            margin: 1em;
-            
-            .pMain {
-                font-size: 1.3em;
-                font-weight: 500;
-            }
-            a {
-                color: @bg01;
-                font-size: 1.2em;
-                font-weight: 500;
-            }
-            
-        }
-        .row {
-            .flexrow();
-            width: 95%;
-
-            #login, #reg {
-                .flexcolumn();
-                margin: 2em;
-                padding: 1.5em;
-                width: 20%;
-                border: @border01;
-
-                section {
-                    width: 100%;
-                    .flexrow();
-                    margin: 1em;
-                    justify-content: space-between;
-                }
-
-                button {
-                    background-color: @border;
-                    color: @bg01;
-                    padding: .5em;
-                    font-size: 1.1em;
-                    font-weight: 700;
-                }
-            }
-            .logReg {
-                background-color: @border;
-                color: @bg01;
-                padding: .5em;
-                font-size: 1em;
-                font-weight: 700;
-
-                a {
-                    color: @bg01;
-                    text-decoration: none;
-                }
-            }
-
-            #reg {
-                display: none;
-            }
-
-            #profile {
-                max-width: 200px;
-                border-radius: 50%;
-                margin: .5em 1em;
-            }
-            .column {
-                .flexcolumn();
-
-                p {
-                    text-align: center;
-
-                    a {
-                        color: @bg01;
-                    }
-                }
-            }
-        }
         #tawk-iframe {
             width: 55%;
             height: 900px;
@@ -156,28 +52,6 @@ body {
         background-color: @bg01;
         width: 95%;
         border: @border01;
-        color: #fff;
-        
-        .row {
-            .flexrow();
-            width: 85%;
-
-            .row {
-                .flexrow();
-                width: 50%;
-
-                img {
-                    max-height: 40px;
-                    border-radius: 50%;
-                    padding: .5em;
-                    margin: .5em;
-                }
-            }
-            .column {
-                .flexcolumn();
-                width: 50%;
-            }
-        }
     }
 }
 
