@@ -17,19 +17,38 @@ body {
             flex-wrap: wrap;
             width: 85%;
             justify-content: space-evenly;
+            
+            img {
+                max-width: 300px;
+            }
+            nav {
+                .flexrow();
+                width: 70%;
+                justify-content: space-around;
 
-            #myLinks {
+                .icon {
+                    display: none;
+                }
 
                 a {
-                    text-decoration: none;
-                    padding: 1em;
-                    margin: .5em;
-                    border-radius: 30%;
-                    box-shadow: 5px 5px @lt02;
-                    border: 1px solid @lt02;
-                    color: @ltfont;
-                    background-color: @ltbgtrasnarent;
-                    font-weight: 900;
+                    font-size: 1.2em;
+                }
+
+                #myLinks {
+                    .flexrow();
+                    width: 100%;
+                    justify-content: space-around;
+                }
+            }
+            .column {
+                .flexcolumn();
+                width: 60%;
+
+                nav {
+                    .flexrow();
+                    width: 100%;
+                    margin: 1.5em;
+                    justify-content: space-between;
                 }
                 
             }
@@ -42,6 +61,115 @@ body {
         border: @border01;
         background-image: url('https://images.craftsnherbs.com/beedev/bg02new.png');
 
+        p {
+            width: 75%;
+        }
+        h3 {
+            font-size: 1.6em;
+        }
+        h4 {
+            font-size: 1.4em;
+        }
+        .pMain {
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+        ul {
+            li {
+                font-size: 1.3em;
+                font-weight: 500;
+                ul {
+                    li {
+                        font-size: 1.1em;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        .projects {
+            .flexcolumn();
+            border: @border01;
+            max-width: 500px;
+            padding: 1em;
+            margin: 1em;
+            
+            .pMain {
+                font-size: 1.3em;
+                font-weight: 500;
+            }
+            a {
+                color: @bg01;
+                font-size: 1.2em;
+                font-weight: 500;
+            }
+            
+        }
+        .row {
+            .flexrow();
+            width: 95%;
+
+            #login, #reg {
+                .flexcolumn();
+                margin: 2em;
+                padding: 1.5em;
+                width: 20%;
+                border: @border01;
+
+                section {
+                    width: 100%;
+                    .flexrow();
+                    margin: 1em;
+                    justify-content: space-between;
+                }
+
+                button {
+                    background-color: @border;
+                    color: @bg01;
+                    padding: .5em;
+                    font-size: 1.1em;
+                    font-weight: 700;
+                }
+            }
+            .logReg {
+                background-color: @border;
+                color: @bg01;
+                padding: .5em;
+                font-size: 1em;
+                font-weight: 700;
+
+                a {
+                    color: @bg01;
+                    text-decoration: none;
+                }
+            }
+
+            #reg {
+                display: none;
+            }
+
+            #profile {
+                max-width: 200px;
+                border-radius: 50%;
+                margin: .5em 1em;
+            }
+            .column {
+                .flexcolumn();
+
+                p {
+                    text-align: center;
+
+                    a {
+                        color: @bg01;
+                    }
+                }
+                h3 {
+                    font-size: 1.6em;
+                }
+                h4 {
+                    font-size: 1.4em;
+                }
+            }
+        }
         #tawk-iframe {
             width: 55%;
             height: 900px;

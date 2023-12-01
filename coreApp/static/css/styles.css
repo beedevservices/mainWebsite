@@ -29,6 +29,57 @@ body header {
   background-color: #374671;
   border: 4px groove #B59E4B;
 }
+body header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  flex-wrap: wrap;
+  width: 85%;
+  justify-content: space-evenly;
+}
+body header nav img {
+  max-width: 300px;
+}
+body header nav nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  justify-content: space-around;
+}
+body header nav nav .icon {
+  display: none;
+}
+body header nav nav a {
+  font-size: 1.2em;
+}
+body header nav nav #myLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+body header nav .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+body header nav .column nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1.5em;
+  justify-content: space-between;
+}
 body main {
   display: flex;
   flex-direction: column;
@@ -38,6 +89,119 @@ body main {
   background-color: #37467125;
   border: 4px groove #B59E4B;
   background-image: url('https://images.craftsnherbs.com/beedev/bg02new.png');
+}
+body main p {
+  width: 75%;
+}
+body main h3 {
+  font-size: 1.6em;
+}
+body main h4 {
+  font-size: 1.4em;
+}
+body main .pMain {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+body main ul li {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+body main ul li ul li {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+body main .projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px groove #B59E4B;
+  max-width: 500px;
+  padding: 1em;
+  margin: 1em;
+}
+body main .projects .pMain {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+body main .projects a {
+  color: #374671;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+body main .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+body main .row #login,
+body main .row #reg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+  padding: 1.5em;
+  width: 20%;
+  border: 4px groove #B59E4B;
+}
+body main .row #login section,
+body main .row #reg section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  justify-content: space-between;
+}
+body main .row #login button,
+body main .row #reg button {
+  background-color: #B59E4B;
+  color: #374671;
+  padding: 0.5em;
+  font-size: 1.1em;
+  font-weight: 700;
+}
+body main .row .logReg {
+  background-color: #B59E4B;
+  color: #374671;
+  padding: 0.5em;
+  font-size: 1em;
+  font-weight: 700;
+}
+body main .row .logReg a {
+  color: #374671;
+  text-decoration: none;
+}
+body main .row #reg {
+  display: none;
+}
+body main .row #profile {
+  max-width: 200px;
+  border-radius: 50%;
+  margin: 0.5em 1em;
+}
+body main .row .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .row .column p {
+  text-align: center;
+}
+body main .row .column p a {
+  color: #374671;
+}
+body main .row .column h3 {
+  font-size: 1.6em;
+}
+body main .row .column h4 {
+  font-size: 1.4em;
 }
 body main #tawk-iframe {
   width: 55%;
