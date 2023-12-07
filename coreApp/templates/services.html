@@ -13,10 +13,17 @@
     
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
-        {% for service in services %}
+        <h2>Our Services</h2>
+        <div class="row serviceRow">
+            {% for service in services %}
             <div class="services">
                 <h2>{{service.title}}</h2>
-                <h3>{{service.package}}</h3>
+                <p class="pMain">{{service.package}}</p>
+                {% if services.quoteNeeded == True %}
+                    <p class="pMain">Request Quote</p>
+                {% else %}
+                    <p class="pMain">Price: ${{service.price}}</p>
+                {% endif %}
                 <ul>
                     {% for info in infos %}
                         {% if service.id == info.service_id %}
@@ -24,8 +31,11 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+                <p class="pMain">{{services.timeFrame}}</p>
+                
             </div>
         {% endfor %}
+        </div>
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
 </body>

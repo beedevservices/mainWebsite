@@ -12,7 +12,8 @@
     {% endif %}
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
-        {% for project in projects %}
+        <div class="row">
+            {% for project in projects %}
             <div class="projects">
                 <h2>{{project.title}}</h2>
                 <div class="pMain">
@@ -28,6 +29,7 @@
                 <a href="{{project.source}}" target="_blank">Source Code</a>
             </div>
         {% endfor %}
+        </div>
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
 </body>

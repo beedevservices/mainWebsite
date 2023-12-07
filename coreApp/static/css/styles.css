@@ -28,21 +28,20 @@ body header {
   width: 95%;
   background-color: #374671;
   border: 4px groove #B59E4B;
+  color: #fff;
 }
-body header nav {
+body header .row {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 1em;
-  flex-wrap: wrap;
-  width: 85%;
+  width: 99%;
   justify-content: space-evenly;
 }
-body header nav img {
+body header .row img {
   max-width: 300px;
 }
-body header nav nav {
+body header .row nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -50,13 +49,13 @@ body header nav nav {
   width: 70%;
   justify-content: space-around;
 }
-body header nav nav .icon {
+body header .row nav .icon {
   display: none;
 }
-body header nav nav a {
+body header .row nav a {
   font-size: 1.2em;
 }
-body header nav nav #myLinks {
+body header .row nav #myLinks {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,14 +63,14 @@ body header nav nav #myLinks {
   width: 100%;
   justify-content: space-around;
 }
-body header nav .column {
+body header .row .column {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 60%;
 }
-body header nav .column nav {
+body header .row .column nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -92,6 +91,9 @@ body main {
 }
 body main p {
   width: 75%;
+}
+body main h2 {
+  font-size: 1.7em;
 }
 body main h3 {
   font-size: 1.6em;
@@ -120,6 +122,7 @@ body main .projects {
   max-width: 500px;
   padding: 1em;
   margin: 1em;
+  background-color: #ffffff3a;
 }
 body main .projects .pMain {
   font-size: 1.3em;
@@ -136,6 +139,19 @@ body main .row {
   justify-content: center;
   align-items: center;
   width: 95%;
+}
+body main .row .services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px groove #B59E4B;
+  background-color: #b59e4b8c;
+  justify-content: space-between;
+  margin: 0.5em;
+  padding: 0.5em;
+  height: 300px;
+  min-width: 200px;
 }
 body main .row #login,
 body main .row #reg {
@@ -203,9 +219,20 @@ body main .row .column h3 {
 body main .row .column h4 {
   font-size: 1.4em;
 }
+body main .serviceRow {
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 body main #tawk-iframe {
   width: 55%;
   height: 900px;
+}
+body .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 body footer {
   display: flex;
@@ -215,4 +242,32 @@ body footer {
   background-color: #374671;
   width: 95%;
   border: 4px groove #B59E4B;
+  color: #fff;
+}
+body footer .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+body footer .row .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+body footer .row .row img {
+  max-height: 40px;
+  border-radius: 50%;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+body footer .row .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
 }
