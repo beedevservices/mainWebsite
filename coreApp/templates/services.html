@@ -14,27 +14,80 @@
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
         <h2>Our Services</h2>
+        <h2>Website Only</h2>
         <div class="row serviceRow">
             {% for service in services %}
-            <div class="services">
-                <h2>{{service.title}}</h2>
-                <p class="pMain">{{service.package}}</p>
-                {% if services.quoteNeeded == True %}
-                    <p class="pMain">Request Quote</p>
-                {% else %}
-                    <p class="pMain">Price: ${{service.price}}</p>
-                {% endif %}
-                <ul>
-                    {% for info in infos %}
-                        {% if service.id == info.service_id %}
-                            <li>{{info.info}}</li>
+                {% if service.packageType == "Website Only" %}
+                    <div class="services">
+                        <h2>{{service.title}}</h2>
+                        <p class="pMain">{{service.package}}</p>
+                        {% if services.quoteNeeded == True %}
+                            <p class="pMain">Request Quote</p>
+                        {% else %}
+                            <p class="pMain">Price: ${{service.price}}</p>
                         {% endif %}
-                    {% endfor %}
-                </ul>
-                <p class="pMain">{{services.timeFrame}}</p>
+                        <ul>
+                            {% for info in infos %}
+                                {% if service.id == info.service_id %}
+                                    <li>{{info.info}}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <p class="pMain">{{services.timeFrame}}</p>
+                    </div>
                 
-            </div>
+                {% endif %}
         {% endfor %}
+        </div>
+        <h2>Add On Services</h2>
+        <div class="row serviceRow">
+            {% for service in services %}
+                {% if service.packageType == "Add Ons" %}
+                    <div class="services">
+                        <h2>{{service.title}}</h2>
+                        <p class="pMain">{{service.package}}</p>
+                        {% if services.quoteNeeded == True %}
+                            <p class="pMain">Request Quote</p>
+                        {% else %}
+                            <p class="pMain">Price: ${{service.price}}</p>
+                        {% endif %}
+                        <ul>
+                            {% for info in infos %}
+                                {% if service.id == info.service_id %}
+                                    <li>{{info.info}}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <p class="pMain">{{services.timeFrame}}</p>
+                    </div>                    
+                {% endif %}
+            {% endfor %}
+        </div>
+        <h2>Maintenance Packages</h2>
+        <div class="row serviceRow">
+            {% for service in services %}
+                {% if service.packageType == "Maintenance Packages" %}
+                    <div class="services">
+                        <h2>{{service.title}}</h2>
+                        <p class="pMain">{{service.package}}</p>
+                        {% if services.quoteNeeded == True %}
+                            <p class="pMain">Request Quote</p>
+                        {% else %}
+                            <p class="pMain">Price: ${{service.price}}</p>
+                        {% endif %}
+                        <ul>
+                            {% for info in infos %}
+                                {% if service.id == info.service_id %}
+                                    <li>{{info.info}}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <p class="pMain">{{services.timeFrame}}</p>
+                    </div>
+                    
+                {% endif %}
+                
+            {% endfor %}
         </div>
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
