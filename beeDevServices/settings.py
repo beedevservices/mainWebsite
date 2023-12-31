@@ -26,6 +26,8 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ALLOWED_ALL_ORIGINS: True
 
+X_FRAME_OPTIONS = "SAMEORIGIN"
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',

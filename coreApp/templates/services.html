@@ -1,4 +1,5 @@
 {% load static %}
+{% load cart %}
 <!DOCTYPE html>
 <html lang="en">
     {% block head %} {% include 'base/head.html' %} {% endblock head %}
@@ -34,8 +35,34 @@
                             {% endfor %}
                         </ul>
                         <p class="pMain">{{services.timeFrame}}</p>
+                        {% if service.id|inTheCart:request.session.cart %}
+                            <div class="row">
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="remove" value="True">
+                                    <button> - </button>
+                                </form>
+                                <button>{{service.id|prodQuantity:request.session.cart}}</button>
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="add" value="True">
+                                    <button> + </button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <form action="/cart/update/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="service_id" value="{{service.id}}">
+                                <input type="hidden" name="price" value="{{service.price}}">
+                                <input type="hidden" name="new" value="True">
+                                <button> Add to Cart </button>
+                            </form>
+                        {% endif %}
                     </div>
-                
                 {% endif %}
         {% endfor %}
         </div>
@@ -59,6 +86,33 @@
                             {% endfor %}
                         </ul>
                         <p class="pMain">{{services.timeFrame}}</p>
+                        {% if service.id|inTheCart:request.session.cart %}
+                            <div class="row">
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="remove" value="True">
+                                    <button> - </button>
+                                </form>
+                                <button>{{service.id|prodQuantity:request.session.cart}}</button>
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="add" value="True">
+                                    <button> + </button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <form action="/cart/update/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="service_id" value="{{service.id}}">
+                                <input type="hidden" name="price" value="{{service.price}}">
+                                <input type="hidden" name="add" value="True">
+                                <button> + </button>
+                            </form>
+                        {% endif %}
                     </div>                    
                 {% endif %}
             {% endfor %}
@@ -83,6 +137,33 @@
                             {% endfor %}
                         </ul>
                         <p class="pMain">{{services.timeFrame}}</p>
+                        {% if service.id|inTheCart:request.session.cart %}
+                            <div class="row">
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="remove" value="True">
+                                    <button> - </button>
+                                </form>
+                                <button>{{service.id|prodQuantity:request.session.cart}}</button>
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="add" value="True">
+                                    <button> + </button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <form action="/cart/update/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="service_id" value="{{service.id}}">
+                                <input type="hidden" name="price" value="{{service.price}}">
+                                <input type="hidden" name="add" value="True">
+                                <button> + </button>
+                            </form>
+                        {% endif %}
                     </div>
                     
                 {% endif %}

@@ -1,0 +1,56 @@
+{% load static %}
+{% load cart %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block head %} {% include 'base/head.html' %} {% endblock head %}
+<body>
+    {% if client %}
+        {% block clientHeader %} {% include 'clientBase/header.html' %} {% endblock clientHeader %}
+    {% elif employee %}
+        {% block employeeHeader %} {% include 'employeeBase/header.html' %} {% endblock employeeHeader %}
+    {% else %}
+        {% block header %} {% include 'base/header.html' %} {% endblock header %}
+    {% endif %}
+    {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
+    <main>
+        <h1>
+            {% if employee %}
+                <span class="session">{{employee.firstName}}'s Cart</span>
+            {% elif client %}
+                <span class="session">{{client.firstName}}'s Cart</span>
+            {% else %}
+                <span class="session">Guest Cart</span>
+            {% endif %}
+        </h1>
+        <table>
+            <tr>
+                <th></th>
+                <th>Service</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            {% if services == False %}
+                <tr>
+                    <td colspan="5">Cart is Empty</td>
+                </tr>
+            {% else %}
+                {% for service in services %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{service.title}}</td>
+                        <td>${{service.price}}</td>
+                        <td>{{service.id|prodQuantity:request.session.cart}}</td>
+                        <td>${{service|prodTotal:request.session.cart}}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            <tr>
+                <th colspan="2">Total</th>
+                <th colspan="3">{{services|cartTotal:request.session.cart}}</th>
+            </tr>
+        </table>
+    </main>
+    {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
+</body>
+</html>

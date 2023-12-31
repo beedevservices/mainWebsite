@@ -19,6 +19,8 @@ urlpatterns = [
     # path('policies/privacy/', views.privacy),
     # path('policies/refund/', views.refund),
     # path('careers/jobs/', views.jobs),
+    path('cart/', views.cart),
+    path('cart/update/', views.addToCart),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
