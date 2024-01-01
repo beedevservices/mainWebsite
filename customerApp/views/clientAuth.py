@@ -8,7 +8,7 @@ def clientLogin(request):
     client = Customer.objects.filter(email=request.POST['email'])
     if client:
         clientLogin = client[0]
-        if bcrypt.checkpw(request.POST['password'].encode90, clientLogin.password.encode()):
+        if bcrypt.checkpw(request.POST['password'].encode(), clientLogin.password.encode()):
             request.session['client_id'] = clientLogin.id
             return redirect('/client/')
         messages.error(request, 'Invalid Credentials')

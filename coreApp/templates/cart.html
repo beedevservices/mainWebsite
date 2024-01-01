@@ -49,6 +49,9 @@
                 <th colspan="2">Total</th>
                 <th colspan="3">{{services|cartTotal:request.session.cart}}</th>
             </tr>
+            <tr>
+                <td><button><a href="/order/request/">Send Request</a></button></td>
+            </tr>
         </table>
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}
