@@ -19,6 +19,7 @@
             {% if client  %}
                 <!-- <a href="/client/dash/">Client Dashboard</a> -->
                 <!-- <a href="/logout/">Logout</a> -->
+                <a href="/cart/">Cart <span class="cart">{{request.session.cart|length}}</span></a>
             {% elif employee %}
                 <!-- <a href="/company/dash/">Employee Dashboard</a> -->
                 <!-- <a href="/logout/">Logout</a> -->

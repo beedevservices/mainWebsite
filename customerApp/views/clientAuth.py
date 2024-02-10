@@ -5,14 +5,17 @@ import bcrypt
 # from coreApp.utils import *
 
 def clientLogin(request):
+    prev_url = request.session['url']
+    request.session['prev_url'] = prev_url
+    request.session['url'] = '/client/logReg/'
     client = Customer.objects.filter(email=request.POST['email'])
     if client:
         clientLogin = client[0]
         if bcrypt.checkpw(request.POST['password'].encode(), clientLogin.password.encode()):
             request.session['client_id'] = clientLogin.id
-            return redirect('/client/')
+            return redirect(f'{prev_url}')
         messages.error(request, 'Invalid Credentials')
-        return redirect('/client/login/')
+        return redirect('/client/logReg/')
     messages.error(request, 'Email not in system')
     return redirect('/client/logReg/')
 

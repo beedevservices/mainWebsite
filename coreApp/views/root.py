@@ -46,6 +46,8 @@ def index(request):
         url = '/'
         request.session['url'] = url
         request.session['prev_url']= prev_url
+    if 'cart' not in request.session:
+        request.session['cart'] = {}
     cart = request.session['cart']
     if 'client_id' not in request.session:
         client = False
@@ -70,10 +72,18 @@ def about(request):
         'title': 'About',
         'header': 'BeeDev Services',
     }
-    prev_url = request.session['url']
-    request.session['prev_url'] = prev_url
-    url = '/about/'
-    request.session = url
+    if 'url' not in request.session:
+        url = '/about/'
+        request.session['url'] = url
+        prev_url = '/'
+        request.session['prev_url'] = prev_url
+    else:
+        prev_url = request.session['url']
+        url = '/about/'
+        request.session['url'] = url
+        request.session['prev_url']= prev_url
+    if 'cart' not in request.session:
+        request.session['cart'] = {}
     cart = request.session['cart']
     if 'client_id' not in request.session:
         client = False

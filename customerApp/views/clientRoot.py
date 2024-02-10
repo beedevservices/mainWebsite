@@ -25,6 +25,17 @@ def clientPortal(request):
     print('what is context:', context)
     return render(request, 'clientDash.html', context)
 
+# def clientLogReg(request):
+#     title = {
+#         'title': "Client Portal",
+#         'header': 'Client Portal - BeeDev Services'
+#     }
+#     prev_url = request.session['url']
+#     request.session['prev_url'] = prev_url
+#     url = '/client/logReg/'
+#     request.session['url'] = url
+#     if 'employee_id' not in request.session
+
 def clientLogReg(request):
     title = {
         'title': "Client Portal",

@@ -44,8 +44,9 @@ def orderRequest(request):
     if 'employee_id' not in request.session:
         employee = False
     else:
-        employee = Employee.objects.get(id=request.session['employee-id'])
+        employee = Employee.objects.get(id=request.session['employee_id'])
     if 'client_id' not in request.session:
+        client = False
         messages.error(request, 'Please create an account to finish sending your order request')
         return redirect('/client/logReg/')
     else:
