@@ -241,8 +241,8 @@ body main .checkout {
   margin-bottom: 2em;
   font-size: 1.2em;
 }
-body main .checkout tr {
-  border: 1px solid #37467125;
+body main .checkout tr td button a {
+  color: #374671;
 }
 body .row {
   display: flex;
