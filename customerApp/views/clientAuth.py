@@ -13,7 +13,7 @@ def clientLogin(request):
         clientLogin = client[0]
         if bcrypt.checkpw(request.POST['password'].encode(), clientLogin.password.encode()):
             request.session['client_id'] = clientLogin.id
-            return redirect(f'{prev_url}')
+            return redirect('/client/')
         messages.error(request, 'Invalid Credentials')
         return redirect('/client/logReg/')
     messages.error(request, 'Email not in system')
