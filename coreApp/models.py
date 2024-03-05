@@ -2,10 +2,12 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 
 packageTypes = [
-    ('Website Only', 'Creation or Updating of Website'),
-    ('Add ons', 'Items that can be added on to any package'),
-    ('Maintenance Packages', 'Plans for Website maintenance'),
-    ('All inclusive', 'Starting from the ground up creating and maintaining website')
+    ('Websites', 'Create or Update websites'),
+    ('Tutoring', 'Tutoring Services'),
+    ('Career', 'Resume and other Career Services'),
+    ('Maintenance', 'Packages for routing website upkeep'),
+    ('Add Ons', 'Items that can be added on to any package'),
+    ('All Inclusive', 'Starting from the ground up creating and maintaining website'),
 ]
 
 class Service(models.Model):

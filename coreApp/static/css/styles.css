@@ -1,3 +1,4 @@
+@import 'spinner.css';
 .flexrow {
   display: flex;
   flex-direction: row;
@@ -234,6 +235,9 @@ body main .serviceRow {
 body main #tawk-iframe {
   width: 55%;
   height: 900px;
+  margin-top: -575px;
+  margin-bottom: 3em;
+  z-index: 10;
 }
 body main .checkout {
   padding: 2em;

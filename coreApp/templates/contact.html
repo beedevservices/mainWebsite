@@ -12,6 +12,13 @@
     {% endif %}
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
+        <div class="spinner">
+            <div class="hive-spinner">
+                <div class="heaven hexagon"></div>
+                <div class="honey hexagon"></div>
+                <div class="hive hexagon"></div>
+            </div>
+        </div>
         <iframe id="tawk-iframe" src="https://tawk.to/beeDevServicesQuestions" frameborder="0"></iframe>
     </main>
     {% block footer %} {% include 'base/footer.html'  %} {% endblock %}

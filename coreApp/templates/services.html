@@ -15,10 +15,19 @@
     {% block flash %} {% include 'base/flash.html' %} {% endblock flash %}
     <main>
         <h2>Our Services</h2>
+        <nav>
+            {% for service in services %}
+                {% if service.packageType == "Website Only" %}
+                    {% if  %}
+                        
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </nav>
         <h2>Website Only</h2>
         <div class="row serviceRow">
             {% for service in services %}
-                {% if service.packageType == "Website Only" %}
+                {% if service.packageType == "Website" %}
                     <div class="services">
                         <h2>{{service.title}}</h2>
                         <p class="pMain">{{service.package}}</p>
@@ -120,7 +129,166 @@
         <h2>Maintenance Packages</h2>
         <div class="row serviceRow">
             {% for service in services %}
-                {% if service.packageType == "Maintenance Packages" %}
+                {% if service.packageType == "Maintenance" %}
+                    <div class="services">
+                        <h2>{{service.title}}</h2>
+                        <p class="pMain">{{service.package}}</p>
+                        {% if services.quoteNeeded == True %}
+                            <p class="pMain">Request Quote</p>
+                        {% else %}
+                            <p class="pMain">Price: ${{service.price}}</p>
+                        {% endif %}
+                        <ul>
+                            {% for info in infos %}
+                                {% if service.id == info.service_id %}
+                                    <li>{{info.info}}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <p class="pMain">{{services.timeFrame}}</p>
+                        {% if service.id|inTheCart:request.session.cart %}
+                            <div class="row">
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="remove" value="True">
+                                    <button> - </button>
+                                </form>
+                                <button>{{service.id|prodQuantity:request.session.cart}}</button>
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="add" value="True">
+                                    <button> + </button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <form action="/cart/update/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="service_id" value="{{service.id}}">
+                                <input type="hidden" name="price" value="{{service.price}}">
+                                <input type="hidden" name="add" value="True">
+                                <button> + </button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    
+                {% endif %}
+                
+            {% endfor %}
+        </div>
+        <h2>Career Services Packages</h2>
+        <div class="row serviceRow">
+            {% for service in services %}
+                {% if service.packageType == "Career" %}
+                    <div class="services">
+                        <h2>{{service.title}}</h2>
+                        <p class="pMain">{{service.package}}</p>
+                        {% if services.quoteNeeded == True %}
+                            <p class="pMain">Request Quote</p>
+                        {% else %}
+                            <p class="pMain">Price: ${{service.price}}</p>
+                        {% endif %}
+                        <ul>
+                            {% for info in infos %}
+                                {% if service.id == info.service_id %}
+                                    <li>{{info.info}}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <p class="pMain">{{services.timeFrame}}</p>
+                        {% if service.id|inTheCart:request.session.cart %}
+                            <div class="row">
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="remove" value="True">
+                                    <button> - </button>
+                                </form>
+                                <button>{{service.id|prodQuantity:request.session.cart}}</button>
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="add" value="True">
+                                    <button> + </button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <form action="/cart/update/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="service_id" value="{{service.id}}">
+                                <input type="hidden" name="price" value="{{service.price}}">
+                                <input type="hidden" name="add" value="True">
+                                <button> + </button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    
+                {% endif %}
+                
+            {% endfor %}
+        </div>
+        <h2>Tutoring Packages</h2>
+        <div class="row serviceRow">
+            {% for service in services %}
+                {% if service.packageType == "Tutoring" %}
+                    <div class="services">
+                        <h2>{{service.title}}</h2>
+                        <p class="pMain">{{service.package}}</p>
+                        {% if services.quoteNeeded == True %}
+                            <p class="pMain">Request Quote</p>
+                        {% else %}
+                            <p class="pMain">Price: ${{service.price}}</p>
+                        {% endif %}
+                        <ul>
+                            {% for info in infos %}
+                                {% if service.id == info.service_id %}
+                                    <li>{{info.info}}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        <p class="pMain">{{services.timeFrame}}</p>
+                        {% if service.id|inTheCart:request.session.cart %}
+                            <div class="row">
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="remove" value="True">
+                                    <button> - </button>
+                                </form>
+                                <button>{{service.id|prodQuantity:request.session.cart}}</button>
+                                <form action="/cart/update/" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="service_id" value="{{service.id}}">
+                                    <input type="hidden" name="price" value="{{service.price}}">
+                                    <input type="hidden" name="add" value="True">
+                                    <button> + </button>
+                                </form>
+                            </div>
+                        {% else %}
+                            <form action="/cart/update/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="service_id" value="{{service.id}}">
+                                <input type="hidden" name="price" value="{{service.price}}">
+                                <input type="hidden" name="add" value="True">
+                                <button> + </button>
+                            </form>
+                        {% endif %}
+                    </div>
+                    
+                {% endif %}
+                
+            {% endfor %}
+        </div>
+        <h2>All Inclusive Packages</h2>
+        <div class="row serviceRow">
+            {% for service in services %}
+                {% if service.packageType == "All Inclusive" %}
                     <div class="services">
                         <h2>{{service.title}}</h2>
                         <p class="pMain">{{service.package}}</p>

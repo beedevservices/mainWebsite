@@ -7,7 +7,7 @@ env.read_env()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'KEY'
+SECRET_KEY = env('KEY')
 
 DEBUG = True
 # DEBUG = False
@@ -149,5 +149,5 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 # EMAIL_PORT = 465
 # EMAIL_HOST_USER = 'beedev.services@gmail.com'
-EMAIL_HOST_PASSWORD = 'HOST_PASSWORD'
+EMAIL_HOST_PASSWORD = env('HOST_PASSWORD')
 EMAIL_HOST_ALT_USER = 'melissa@beedev-services.com'
