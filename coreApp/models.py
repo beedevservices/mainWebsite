@@ -9,6 +9,10 @@ packageTypes = [
     ('Add Ons', 'Items that can be added on to any package'),
     ('All Inclusive', 'Starting from the ground up creating and maintaining website'),
 ]
+subType = [
+    ('Public', 'Public Facing Websites'),
+    ('Internal', 'Internal Company Websites')
+]
 
 class Service(models.Model):
     title = models.CharField(max_length=255)
@@ -16,6 +20,7 @@ class Service(models.Model):
     price = models.CharField(max_length=255, blank=True, null=True)
     quoteNeeded = models.BooleanField(default=0)
     packageType = models.CharField(max_length=255, choices=packageTypes, default='Website Only')
+    subPackageType = models.CharField(max_length=255, choices=subType, default='Public')
     order = models.IntegerField(default=1)
     timeFrame = models.CharField(max_length=255)
 

@@ -18,16 +18,14 @@
         <nav>
             {% for service in services %}
                 {% if service.packageType == "Website Only" %}
-                    {% if  %}
-                        
-                    {% endif %}
+
                 {% endif %}
             {% endfor %}
         </nav>
         <h2>Website Only</h2>
         <div class="row serviceRow">
             {% for service in services %}
-                {% if service.packageType == "Website" %}
+                {% if service.packageType == "Websites" %}
                     <div class="services">
                         <h2>{{service.title}}</h2>
                         <p class="pMain">{{service.package}}</p>
