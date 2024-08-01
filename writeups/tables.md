@@ -1,4 +1,4 @@
-Client logs in
+# Client logs in
     views invoices
         link to paypal to pay invoice
     views project status
@@ -10,7 +10,7 @@ Client logs in
 
 
 
-Websites - 
+# Websites - 
     {
         package: "Public Pkg #1",
         name: "Start-up Website",
